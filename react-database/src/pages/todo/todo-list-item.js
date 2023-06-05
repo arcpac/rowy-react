@@ -1,14 +1,9 @@
-import { useState } from "react";
-
 function TodoListItem(props) {
   const todo = props.todo;
   const submit = () => {
     props.deleteTodo(todo.id);
   };
 
-  const edit = todo => {
-    props.edit(todo)
-  }
   return (
       <li key={todo.id}>
         <h3>{todo.name}</h3>
