@@ -4,7 +4,7 @@ import TodoListItem from './todo-list-item.js'
 import AddTodoButton from './add-todo-button.js'
 import Header from './UI/header.js'
 
-function TodoList() {
+function TodoList(props) {
     const [loading, setLoading] = useState(false)
     const [todos, setTodos] = useState([])
 
@@ -24,7 +24,7 @@ function TodoList() {
 
     const deleteTodo = async id => {
         await del(id)
-        setTodos([...todos.filter(todo => todo.id != id)])
+        setTodos([...todos.filter(todo => todo.id !== id)])
     }
 
     useEffect(() => {
@@ -40,7 +40,7 @@ function TodoList() {
             }
             <ul>
             {todos.length > 0 && todos.map(todo => (
-                <TodoListItem todo={todo} deleteTodo={deleteTodo}/>
+                <TodoListItem todo={todo} deleteTodo={deleteTodo} />
             ))}
             </ul>
         </section>
