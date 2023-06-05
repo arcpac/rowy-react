@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { findAll, create, del } from '../services/todo.js'
-import TodoListItem from './todo-list-item.js'
+import { findAll, create, del } from '../../services/todo.js'
+
 import AddTodoButton from './add-todo-button.js'
-import Header from './UI/header.js'
+import TodoListItem from './todo-list-item.js'
 
 function TodoList(props) {
     const [loading, setLoading] = useState(false)
@@ -33,7 +33,6 @@ function TodoList(props) {
 
     return (
         <section>
-            <Header />
             <AddTodoButton createTodo={createTodo}/>
             { loading && 
                 <p>loading...</p>

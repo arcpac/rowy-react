@@ -1,5 +1,4 @@
 import { useState } from "react";
-import EditModal from "./edit-modal";
 
 function TodoListItem(props) {
   const todo = props.todo;
