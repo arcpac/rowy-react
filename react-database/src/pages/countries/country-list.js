@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { findAll, findByContinent } from "../../services/countries.js";
 import CountryListItem from "./country-list-item.js";
+import Header from "../../components/UI/header.js";
 
 function CountryList() {
   const [loading, setLoading] = useState(false);
@@ -37,7 +38,8 @@ function CountryList() {
   };
 
   return (
-    <>
+    <section>
+      <Header />
       {country && country.name}
 
       <input type="text" onChange={handleChange} />
@@ -52,7 +54,7 @@ function CountryList() {
             ))}
         </ul>
       </section>
-    </>
+    </section>
   );
 }
 
